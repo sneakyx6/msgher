@@ -3,141 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SECURITY BREACH ALERT</title>
+    <title>Device Hacked - Prank Revealed!</title>
     <style>
         body {
-            font-family: 'Courier New', monospace;
-            background-color: #1a1a1a;
-            color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 20px;
+            text-align: center;
             overflow: hidden;
         }
-        .terminal {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 25px;
-            background: #0d0d0d;
-            border: 2px solid #ff4d4d;
-            box-shadow: 0 0 20px rgba(255, 77, 77, 0.3);
+        .hacked-container {
+            background-color: #1a1a1a;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
+            position: relative;
+            animation: fadeIn 1s ease-in;
         }
-        .warning {
-            color: #ff4d4d;
-            font-size: 36px;
+        h1 {
+            font-size: 50px;
+            color: #ff0000;
+            margin-bottom: 20px;
             text-transform: uppercase;
-            animation: flicker 0.2s infinite;
-            text-shadow: 0 0 5px #ff4d4d;
+            animation: glow 1.5s infinite alternate;
         }
-        .text {
+        p {
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+        .action-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .anime-btn {
+            padding: 15px 30px;
             font-size: 18px;
-            line-height: 1.6;
-            white-space: pre-wrap;
-            color: #b3b3b3;
-        }
-        .progress {
-            width: 100%;
-            height: 25px;
-            background: #333;
-            margin: 20px 0;
-            border: 1px solid #ff4d4d;
-            overflow: hidden;
-        }
-        .progress-bar {
-            width: 0;
-            height: 100%;
-            background: linear-gradient(90deg, #ff4d4d, #ff8080);
-            animation: load 4s infinite;
-        }
-        @keyframes flicker {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-        @keyframes load {
-            0% { width: 0; }
-            100% { width: 100%; }
-        }
-        button {
-            background: #ff4d4d;
+            background: linear-gradient(45deg, #ff0000, #ff4d4d);
             color: #fff;
             border: none;
-            padding: 12px 25px;
-            font-family: 'Courier New', monospace;
+            border-radius: 10px;
             cursor: pointer;
-            text-transform: uppercase;
-            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
         }
-        button:hover {
-            background: #cc0000;
-            box-shadow: 0 0 15px #ff4d4d;
+        .anime-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
         }
-        .blink {
-            animation: blink 0.8s infinite;
+        .anime-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
         }
-        @keyframes blink {
-            50% { opacity: 0; }
+        .anime-btn:hover::before {
+            width: 200px;
+            height: 200px;
         }
-        .error {
-            color: #ff4d4d;
-            font-weight: bold;
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; }
+            100% { text-shadow: 0 0 20px #ff0000, 0 0 30px #ff4d4d; }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
         }
         .link {
             color: #ff8080;
             text-decoration: underline;
-            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <div class="terminal">
-        <h1 class="warning">*** SECURITY BREACH ALERT ***</h1>
-        <p class="text">
-[SECURITY ALERT] SYSTEM INTEGRITY COMPROMISED
-IP ADDRESS: [192.168.1.XXX] - TRACE: [COMPLETED]
-LOCATION: [GEO-LOCKED] - STATUS: <span class="error">VULNERABLE</span>
-
-[LOG] Unauthorized access initiated: March 20, 2025 - 14:22:17 UTC
-[SYSTEM] Firewall: <span class="error">OFFLINE</span> | Antivirus: <span class="error">TERMINATED</span>
-[WARNING] Data encryption in progress - 92% complete
-
-> Scanning drives: C:/ D:/ E:/ F:/
-> Extracting: passwords.txt, banking_info, photos, personal_data.zip
-> Uploading to remote server: [REDACTED].onion
-        </p>
-        <div class="progress">
-            <div class="progress-bar"></div>
+    <div class="hacked-container">
+        <h1>Ur Device Hacked!</h1>
+        <p>Haha, gotcha! Ye bas ek prank tha, tension mat le!</p>
+        <div class="action-buttons">
+            <button class="anime-btn" onclick="alert('Device unlocked! Ye toh bas mazaak tha, bhai!')">Click Here to Unlock</button>
+            <button class="anime-btn" onclick="window.location.href='#message'">Message Admin</button>
         </div>
-        <p class="text">
-[CRITICAL] System wipe sequence initiated in: <span class="blink">15 seconds</span>
-[INSTRUCTION] Do not power off or close this window - <span class="error">IRREVERSIBLE DAMAGE DETECTED</span>
-[NOTICE] To stop this process and remove data, <span class="link" onclick="window.location.href='#message'">message here</span> (@YourInstaHandle on Instagram)
-        </p>
-        <button onclick="alert('Bhai, relax! Ye toh bas ek prank tha! Sab safe hai!'); window.location.href='index.html'">KILL PROCESS</button>
     </div>
 
-    <!-- Fake Link Tree Style Popup -->
+    <!-- Fake Message Admin Popup -->
     <div id="message" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); color:#fff; text-align:center; padding-top:20%;">
-        <h2>Message @YourInstaHandle</h2>
-        <p>Send "STOP" to @YourInstaHandle on Instagram to cancel this operation.</p>
-        <button onclick="alert('Haha! Bhai, ye prank tha! Chill kar!'); window.location.href='index.html'">Close</button>
+        <h2>Contact Admin</h2>
+        <p>Reach out to me on:</p>
+        <p><a href="https://instagram.com/@YourInstaHandle" target="_blank" class="link">@YourInstaHandle (Instagram)</a></p>
+        <p><a href="https://twitter.com/YourUsername" target="_blank" class="link">@YourUsername (Twitter)</a></p>
+        <button onclick="alert('Bhai, ye prank tha! Sab safe hai!')" style="background:#ff0000; border:none; padding:10px 20px; color:#fff; cursor:pointer; border-radius:5px;">Close</button>
     </div>
 
     <script>
-        // Fake typing effect
-        const textElements = document.querySelectorAll('.text');
-        textElements.forEach(text => {
-            let content = text.innerHTML;
-            text.innerHTML = '';
-            let i = 0;
-            function type() {
-                if (i < content.length) {
-                    text.innerHTML += content.charAt(i);
-                    i++;
-                    setTimeout(type, 15);
-                }
-            }
-            setTimeout(type, 500);
-        });
-
         // Handle fake link redirection
         window.addEventListener('hashchange', () => {
             if (window.location.hash === '#message') {
